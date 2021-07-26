@@ -1,0 +1,210 @@
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 au-card">
+                    <!-- DATA TABLE -->
+                    <h3 class="title-5 m-b-35">SEDE</h3>
+                    <div class="table-data__tool">
+
+                        <div class="table-data__tool-right">
+                            <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal"
+                                data-target="#scrollmodal">
+                                <i class="zmdi zmdi-plus"></i>Agregar</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="tableSedes" style="width:100%" class="table-earning">
+                            <thead>
+                                <tr>
+                                    <th style="display: none;">
+                                        <label class="au-checkbox">
+                                            <input type="checkbox">
+                                            <span class="au-checkmark"></span>
+                                        </label>
+                                    </th>
+                                    <th>FOLIO</th>
+                                    <th>Nombre</th>
+                                    <th>Direccion</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each sedes.sedes}}
+                                <tr class="tr-shadow">
+                                    <td style="display: none;">
+                                        <label class="au-checkbox">
+                                            <input type="checkbox">
+                                            <span class="au-checkmark"></span>
+                                        </label>
+                                    </td>
+                                    <td>{{id}}</td>
+                                    <td>
+                                        <span class="status--process">{{Nombre}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="status--process">{{Calle}} {{NumExterior}} , {{NumInterior}}
+                                            {{Colonia}} , {{CodPostal}} {{Ciudad}}, {{EstadoSede}}, {{Pais}}.</span>
+                                    </td>
+
+                                    <td>
+                                        <div class="table-data-feature">
+                                            <form action="/inventario/stock/editarmarca/{{id}}">
+                                                <button class="item" data-toggle="tooltip" data-placement="top"
+                                                    title="Send">
+                                                    <i class="zmdi zmdi-mail-send"></i>
+                                                </button>
+                                            </form>
+                                            <form action="/inventario/stock/editarmarca/{{id}}">
+                                                <button type="submit" class="item" data-toggle="tooltip"
+                                                    data-placement="top" title="Edit">
+                                                    <i class="zmdi zmdi-edit"></i>
+
+                                                </button>
+                                            </form>
+                                            <button class="item" data-toggle="tooltip" data-placement="top"
+                                                title="Delete">
+                                                <i class="zmdi zmdi-delete"></i>
+                                            </button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- END DATA TABLE -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal scroll -->
+<div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>G-Global</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Agregar</strong>
+                        <small>Sede</small>
+                    </div>
+                    <form action="guardarsede" class="card-body card-block" method="POST">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="codigosede" class="control-label ">Codigo Sede</label>
+                                    <input id="codigosede" name="codigosede" type="text" class="form-control"
+                                        aria-required="true" aria-invalid="false">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="nombresede" class="control-label">Nombre</label>
+                                    <input id="nombresede" name="nombresede" type="text" class="form-control"
+                                        aria-required="true" aria-invalid="false">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="calle" class="control-label ">Calle</label>
+                                    <input id="calle" name="calle" type="text" class="form-control" aria-required="true"
+                                        aria-invalid="false">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="numext" class="control-label">Numero Exterior</label>
+                                    <input id="numext" name="numext" type="text" class="form-control"
+                                        aria-required="true" aria-invalid="false">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="numint" class="control-label ">Numero Interior</label>
+                                    <input id="numint" name="numint" type="text" class="form-control"
+                                        aria-required="true" aria-invalid="false">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="colonia" class="control-label">Colonia</label>
+                                    <input id="colonia" name="colonia" type="text" class="form-control"
+                                        aria-required="true" aria-invalid="false">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="postal" class="control-label ">Codigo Postal</label>
+                                    <input id="postal" name="postal" type="text" class="form-control"
+                                        aria-required="true" aria-invalid="false">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="ciudad" class="control-label">Ciudad</label>
+                                    <input id="ciudad" name="ciudad" type="text" class="form-control"
+                                        aria-required="true" aria-invalid="false">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="estado" class="control-label ">Estado</label>
+                                    <input id="estado" name="estado" type="text" class="form-control"
+                                        aria-required="true" aria-invalid="false">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="pais" class="control-label">Pais</label>
+                                    <input id="pais" name="pais" type="text" class="form-control" aria-required="true"
+                                        aria-invalid="false">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="telefono" class="control-label ">Telefono</label>
+                                    <input id="telefono" name="telefono" type="text" class="form-control"
+                                        aria-required="true" aria-invalid="false">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button id="stockBtn" type="submit" class="btn btn-lg btn-success btn-block">
+                                <span>Guardar</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="copyright">
+        <p>Copyright © 2021 Hero. All rights reserved. by <a href="https://g-global.com/"> G-Global</a>.</p>
+    </div>
+</div>
+</div> <!-- Se cierra el  Page Container Del Menu->

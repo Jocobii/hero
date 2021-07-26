@@ -1,0 +1,189 @@
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            {{#each colaborador}}
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-user"></i>
+                    <strong class="card-title pl-2">Perfil Del Colaborador</strong>
+                </div>
+                <div class="card-body">
+                    <div class="mx-auto d-block">
+                        <h3 class="text-sm-center mt-2 mb-1">{{nombre}} {{apellidoPaterno}}</h3>
+                        <div class="location text-sm-center">
+                            <i class="fa fa-map-marker"></i> {{sede.Nombre}}
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card-body">
+                    <div class="card-title">
+                        <h3 class="text-center title-2">Datos Personales</h3>
+                    </div>
+
+                    <div class="form-group has-success">
+                        <label for="cc-name" class="control-label mb-1">Nombres</label>
+                        <input id="cc-name" name="nombre" type="text" class="form-control" placeholder="{{nombre}}"
+                            disabled>
+                        <span class="help-block field-validation-valid" data-valmsg-for="cc-name"
+                            data-valmsg-replace="true"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="cc-exp" class="control-label mb-1">Apellito Paterno</label>
+                                <input id="cc-exp" name="cc-exp" type="tel" class="form-control cc-exp" value=""
+                                    placeholder="{{apellidoPaterno}}" data-val="true" disabled>
+                                <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="x_card_code" class="control-label mb-1">Apellido Materno</label>
+                            <div class="input-group">
+                                <input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc"
+                                    value="" data-val="true" placeholder="{{apellidoMaterno}}" disabled>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group has-success">
+                        <label for="cc-name" class="control-label mb-1">Fecha De Nacimiento</label>
+                        <input id="cc-name" name="cc-name" type="text" class="form-control cc-name valid"
+                            data-val="true" placeholder="{{fecha}}" disabled>
+                        <span class="help-block field-validation-valid" data-valmsg-for="cc-name"
+                            data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group has-success">
+                        <label for="cc-name" class="control-label mb-1">Correo Electronico</label>
+                        <input id="cc-name" name="cc-name" type="text" class="form-control cc-name valid"
+                            data-val="true" placeholder="{{email}}" disabled>
+                        <span class="help-block field-validation-valid" data-valmsg-for="cc-name"
+                            data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3 class="text-center title-2">Datos Laborales</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h3 class="text-center title-2">Colaborador</h3>
+                            </div>
+                            <hr>
+                            <div class="row">
+
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="cc-exp" class="control-label mb-1"># Servidor</label>
+                                        <input id="cc-exp" name="cc-exp" type="tel" class="form-control "
+                                            placeholder="{{numeroServidor}}" disabled>
+                                        <span class="help-block" data-valmsg-for="cc-exp"
+                                            data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <label for="x_card_code" class="control-label mb-1">Puesto</label>
+                                    <div class="input-group">
+                                        <input id="x_card_code" name="x_card_code" type="tel" class="form-control "
+                                            placeholder="{{tipoColaborador.puesto}}" disabled>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="cc-exp" class="control-label mb-1">Sede</label>
+                                        <input id="cc-exp" name="cc-exp" type="tel" class="form-control "
+                                            placeholder="{{sede.Nombre}}" disabled>
+                                        <span class="help-block" data-valmsg-for="cc-exp"
+                                            data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <label for="x_card_code" class="control-label mb-1">Equipo</label>
+                                    <div class="input-group">
+                                        <input id="x_card_code" name="x_card_code" type="tel" class="form-control "
+                                            placeholder="{{equipo.equipo}}" disabled>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cc-payment" class="control-label mb-1">Link Comodato</label>
+                                <input id="cc-pament" name="cc-payment" type="text" class="form-control"
+                                    value="{{comodato}}" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+
+                        <div class="card-body ">
+                            <div class="card-title">
+                                <h3 class="text-center title-2">Accesos</h3>
+                            </div>
+                            <hr>
+                            <!-- TABLA USUARIOS -->
+                            <div class="table-responsive table-data ">
+                                
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <td>Nombre</td>
+                                            <td>Plataforma</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each Usuarios}}
+                                        <tr>
+
+                                            <td>
+                                                <div class="table-data__info">
+
+                                                    <h6>{{usuario}}</h6>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="role admin">{{tipoUsuario.plataforma}}</span>
+                                            </td>
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                        </div>
+                        <!-- TERMINA TABLA USUARIOS-->
+
+                    </div>
+
+                </div>
+                <div class="m-2 row justify-content-center">
+                    <a href="/colaborador" type="submit" class="btn btn-success col-auto btn-lg">Cerrar</a>
+                </div>
+            </div>
+
+        </div>
+        <!--se cierra el card-->
+        {{/each}}
+    </div>
+    
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="copyright">
+                <p>Copyright © 2021 G-Global. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div> <!-- Se cierra el  Page Container Del Menu->

@@ -1,0 +1,138 @@
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 au-card">
+                    <!-- DATA TABLE -->
+                    <h3 class="title-5 m-b-35">EQUIPO</h3>
+                    <div class="table-data__tool">
+
+                        <div class="table-data__tool-right">
+                            <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal"
+                                data-target="#scrollmodal">
+                                <i class="zmdi zmdi-plus"></i>Agregar</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="tableEquipos" style="width:100%" class="table-data2 table-earning">
+                            <thead>
+                                <tr>
+                                    <th style="display: none;">
+                                        <label class="au-checkbox">
+                                            <input type="checkbox">
+                                            <span class="au-checkmark"></span>
+                                        </label>
+                                    </th>
+                                    <th>FOLIO</th>
+                                    <th>Nombre</th>
+                                    <th>Codigo equipo</th>
+                                    <th>Email</th>
+                                    <th>Area</th>
+                                    <th>Departamento</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each equipos.equipos}}
+                                <tr class="tr-shadow">
+                                    <td style="display: none;">
+                                        <label class="au-checkbox">
+                                            <input type="checkbox">
+                                            <span class="au-checkmark"></span>
+                                        </label>
+                                    </td>
+                                    <td>{{id}}</td>
+                                    <td>
+                                        <span class="status--process">{{equipo}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="status--process">{{codEquipo}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="status--process">{{email}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="status--process">{{area.area}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="status--process">{{area.departamento.departamento}}</span>
+                                    </td>
+                                    <td>
+                                        <div class="table-data-feature">
+                                            <form action="/inventario/stock/editarmarca/{{id}}">
+                                                <button class="item" data-toggle="tooltip" data-placement="top"
+                                                    title="Send">
+                                                    <i class="zmdi zmdi-mail-send"></i>
+                                                </button>
+                                            </form>
+                                            <form action="/inventario/stock/editarmarca/{{id}}">
+                                                <button type="submit" class="item" data-toggle="tooltip"
+                                                    data-placement="top" title="Edit">
+                                                    <i class="zmdi zmdi-edit"></i>
+
+                                                </button>
+                                            </form>
+                                            <button class="item" data-toggle="tooltip" data-placement="top"
+                                                title="Delete">
+                                                <i class="zmdi zmdi-delete"></i>
+                                            </button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- END DATA TABLE -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal scroll -->
+<div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>G-Global</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Agregar</strong>
+                        <small>Marca</small>
+                    </div>
+                    <form action="guardarmarca" class="card-body card-block" method="POST">
+                        <div class="form-group">
+                            <label for="nombremarca" class="control-label mb-1">Nombre</label>
+                            <input id="nombremarca" name="nombremarca" type="text" class="form-control"
+                                aria-required="true" aria-invalid="false">
+                        </div>
+
+
+                        <div>
+                            <button id="stockBtn" type="submit" class="btn btn-lg btn-success btn-block">
+                                <span>Guardar</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="copyright">
+        <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.
+        </p>
+    </div>
+</div>
+</div> <!-- Se cierra el  Page Container Del Menu->

@@ -1,0 +1,117 @@
+{
+    "basics": {
+        "name": "Adalberto Alexander Vazquez Jocobi",
+        "label": "Programador Junior",
+        "picture": "jocobi.png",
+        "email": "alexander.vazquez@g-global.com",
+        "phone": "(664) 773-8464",
+        "website": "",
+        "summary": "",
+        "location": {
+            "address": "Ignacio Aldama",
+            "postalCode": "22206",
+            "city": "Tijuana",
+            "countryCode": "MX",
+            "region": "Baja California"
+        },
+        "profiles": [
+            {
+                "network": "Facebook",
+                "username": "jocobi",
+                "url": "https://www.facebook.com/NoPityforAAcoward/"
+            },
+            {
+                "network": "github",
+                "username": "jocobii",
+                "url": "https://github.com/Jocobii"
+            }
+        ]
+    },
+    "work": [
+        {
+            "company": "G-Global",
+            "position": "Especialista",
+            "website": "https://g-global.com",
+            "startDate": "2021-03-14",
+            "endDate": "",
+            "summary": "Suport and Development...",
+            "highlights": [
+                "Started the company"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "UTT",
+            "area": "Software Development",
+            "studyType": "Bachelor",
+            "startDate": "2018-08-20",
+            "endDate": "2022-08-20",
+            "gpa": "4.0",
+            "courses": [
+                "ADMINISTRACIÓN DE BASE DE DATOS",
+                "Desarrollo Web",
+                "SEGURIDAD EN EL DESARROLLO DE APLICACIONES",
+                "ARQUITECTURAS DE SOFTWARE",
+                "METODOLOGÍAS PARA EL DESARROLLO DE PROYECTOS",
+                "ESTRUCTURA DE DATOS APLICADAS"
+            ]
+        },
+        {
+            "institution": "University",
+            "area": "Software Development",
+            "studyType": "Bachelor",
+            "startDate": "2018-05-20",
+            "endDate": "2022-05-20",
+            "gpa": "4.0",
+            "courses": [
+                "Basic SQL",
+                "Web Developtment"
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "name": "Web Development",
+            "level": "Junior",
+            "keywords": [
+                "HTML",
+                "CSS",
+                "Javascript",
+                "PHP",
+                "C#",
+                "JAVA",
+                "R",
+                "SQL",
+                "NOSQL",
+                "PYTHON",
+                "GIT",
+                "CODEIGNITER"
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "language": "Espanol",
+            "fluency": "Espanol nativo"
+        },
+        {
+            "language": "English",
+            "fluency": "Basic"
+        }
+    ],
+    "interests": [
+        {
+            "name": "music",
+            "keywords": [
+                "Fl Studio"
+            ]
+        }
+    ],
+    "references": [
+        {
+            "name": "Jorge Vazquez",
+            "reference": "jorge.vazquez@g-global.com"
+        }
+    ]
+}

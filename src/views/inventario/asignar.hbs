@@ -1,0 +1,123 @@
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            {{#each stock}}
+            <form action="/colaborador/actualizarcolaborador" class="card " method="POST">
+
+                <div class="card-header">
+                    <i class="fa fa-user"></i>
+                    <strong class="card-title pl-2">Asignar Recurso</strong>
+                </div>
+                <div class="card-body">
+                    <div class="mx-auto d-block">
+                        <h3 class="text-sm-center mt-2 mb-1">
+                            {{tipodispositivo.dispositivo}},
+                            {{modelodespositivo.modelo}}
+                        </h3>
+                        <hr>
+                    </div>
+                    <br>
+                    <div class="card-title">
+                        <h3 class="text-center title-2">Datos Del Recurso</h3>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="serie" class="control-label mb-1">Serie</label>
+                                <input id="serie" name="serie" type="text" class="form-control cc-exp"
+                                    value="{{serie}}" data-val="true" disabled>
+                                <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="marca" class="control-label mb-1">Marca</label>
+                            <div class="input-group">
+                                <input id="marca" name="marca" type="text" class="form-control cc-cvc"
+                                    data-val="true" value="{{modelodespositivo.marca.Nombre}}" disabled>
+                            </div>
+                        </div>
+
+                    </div>
+                     <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="estadodispositivo" class="control-label mb-1">Estado</label>
+                                <input id="estadodispositivo" name="serie" type="text" class="form-control cc-exp"
+                                    value="{{estadodispositivo}}" data-val="true" disabled>
+                                <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="puertosvideo" class="control-label mb-1">Puertos</label>
+                            <div class="input-group">
+                                <input id="puertosvideo" name="puertosvideo" type="text" class="form-control cc-cvc"
+                                    data-val="true" value="{{puertosvideo}}" disabled>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="Procesador" class="control-label mb-1">Procesador</label>
+                                <input id="Procesador" name="Procesador" type="text" class="form-control cc-exp"
+                                    value="{{procesador}}" data-val="true" disabled>
+                                <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="memoria" class="control-label mb-1">Memoria</label>
+                            <div class="memoria-group">
+                                <input id="memoria" name="memoria" type="text" class="form-control cc-cvc"
+                                    data-val="true" value="{{memoria}}" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="almacenamiento" class="control-label mb-1">almacenamiento</label>
+                                <input id="almacenamiento" name="almacenamiento" type="text" class="form-control cc-exp"
+                                    value="{{almacenamiento}}" data-val="true" disabled>
+                                <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="resolucion" class="control-label mb-1">resolucion</label>
+                            <div class="memoria-group">
+                                <input id="resolucion" name="resolucion" type="text" class="form-control cc-cvc"
+                                    data-val="true" value="{{resolucion}}" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group has-success">
+                        <label for="descripcion" class="control-label mb-1">Descripcion</label>
+                        <textarea id="descripcion" name="descripcion" type="text" class="form-control" disabled> {{descripcion}}</textarea>
+                    </div>
+
+                </div>
+                
+                <div class="m-2 row justify-content-center">
+                    <a href="/colaborador/" class="btn btn-danger col-auto btn-lg m-1">Cancelar</a>
+                    <a href="/colaborador/actualizarcolaborador" class="btn btn-success col-auto btn-lg m-1">Actualizar</a>
+                </div>
+            </div>
+        
+        </form>
+        {{/each}}
+    </div>
+
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="copyright">
+            <p>Copyright © 2021 G-Global. All rights reserved.</p>
+        </div>
+    </div>
+</div>
+
+</div> <!-- Se cierra el  Page Container Del Menu->

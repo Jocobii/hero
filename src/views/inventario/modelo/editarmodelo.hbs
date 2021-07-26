@@ -1,0 +1,54 @@
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <form action="/modelo/actualizarmodelo" class="au-card" method="POST">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h3 class="text-center title-2">Modelo</h3>
+                    </div>
+                    <hr>
+                    {{#each modelo}}
+                    <div class="form-group" style="display: none;">
+                        <label for="id" class="control-label mb-1">Folio De La Marca</label>
+                        <input id="id" name="id" type="text" class="form-control" aria-required="true"
+                            aria-invalid="false" value="{{id}}">
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        <label for="status" class="control-label mb-1">Estatus</label>
+                        <input id="status" name="status" type="text" class="form-control"
+                            aria-required="true" aria-invalid="false" value="{{status}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombremodelo" class="control-label mb-1">Nombre Del Modelo</label>
+                        <input id="nombremodelo" name="nombremodelo" type="text" class="form-control"
+                            aria-required="true" aria-invalid="false" value="{{modelo}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="select" class=" form-control-label">Selecciona una marca</label>
+                        <select name="idmarca" id="idmarca" class="form-control">
+                            <optgroup label="Marca Actual">
+                                <option value="{{marca.id}}">{{marca.Nombre}}</option>
+                            </optgroup>
+                            {{/each}}
+                            <optgroup label="Marca Disponibles">
+                                {{#each marcas.marca}}
+                                <option value="{{id}}">{{Nombre}}</option>
+                                {{/each}}
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="m-2 row justify-content-center">
+                        <a href="/modelo/" class="btn btn-danger col-auto btn-lg m-1">Cancelar</a>
+                        <button type="submit" class="btn btn-success col-auto btn-lg m-1">Actualizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="copyright">
+            <p>Copyright © 2021 G-Global. All rights reserved.</p>
+        </div>
+    </div>
+</div>
+</div> <!-- Se cierra el  Page Container Del Menu->

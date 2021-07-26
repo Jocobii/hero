@@ -1,0 +1,209 @@
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 au-card">
+                    <!-- DATA TABLE -->
+                    <h3 class="title-5 m-b-35">COLABORADORES</h3>
+                    <div class="table-data__tool">
+                        <div class="table-data__tool-right">
+                            <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal"
+                                data-target="#scrollmodal">
+                                <i class="zmdi zmdi-plus"></i>add item</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="tableColaboradores" style="width:100%" class="table-earning">
+                            <thead>
+                                <tr>
+                                    <th style="display: none;">
+                                        <label class="au-checkbox">
+                                            <input type="checkbox">
+                                            <span class="au-checkmark"></span>
+                                        </label>
+                                    </th>
+                                    <th>NOMBRE</th>
+                                    <th>NUMERO SERVIDOR</th>
+                                    <th>EQUIPO</th>
+                                    <th>Puesto</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each colaboradores.colaboradores}}
+                                <tr class="tr-shadow">
+                                    <td style="display: none;">
+                                        <label class="au-checkbox">
+                                            <input type="checkbox">
+                                            <span class="au-checkmark"></span>
+                                        </label>
+                                    </td>
+                                    <td>{{nombre}} {{apellidoPaterno}} {{apellidoMaterno}}</td>
+                                    <td class="desc">{{numeroServidor}}</td>
+                                    <td>{{equipo.equipo}}</td>
+                                    <td>
+                                        <span class="status--process">{{tipoColaborador.puesto}}</span>
+                                    </td>
+                                    <td>
+                                        <div class="table-data-feature">
+                                            <form action="/colaborador/perfil/{{id}}">
+                                                <button class="item" data-toggle="tooltip" data-placement="top"
+                                                    title="Send">
+                                                    <i class="zmdi zmdi-mail-send"></i>
+                                                </button>
+                                            </form>
+                                            <form action="/colaborador/editar/{{id}}">
+                                                <button type="submit" class="item" data-toggle="tooltip"
+                                                    data-placement="top" title="Edit">
+                                                    <i class="zmdi zmdi-edit"></i>
+                                                </button>
+                                            </form>
+                                            <button class="item" data-toggle="tooltip" data-placement="top"
+                                                title="Delete">
+                                                <i class="zmdi zmdi-delete"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- END DATA TABLE -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal scroll -->
+<div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>G-Global</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Agregar Colaborador</strong>
+                    </div>
+                    <form action="guardarcolaborador" class="card-body card-block" method="POST">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="company" class=" form-control-label">Numero De Servidor</label>
+                                    <input type="number" id="numservidor" name="numservidor"
+                                        placeholder="Ingresa el numero de servidor" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="company" class=" form-control-label" required>Nombre</label>
+                                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa el nombre"
+                                        class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="vat" class=" form-control-label">Apellido Paterno</label>
+                                    <input type="text" id="paterno" name="paterno"
+                                        placeholder="Ingresa el apellido paterno" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="street" class=" form-control-label">Apellido Materno</label>
+                                    <input type="text" id="materno" name="materno"
+                                        placeholder="Ingresa el apellido materno" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="city" class=" form-control-label">Fecha De Nacimiento</label>
+                                <input type="text" name="fecha" id="fecha" placeholder="aaaa/mm/dd"
+                                    class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="postal-code" class=" form-control-label">Email</label>
+                                    <input type="email" name="email" id="email" placeholder="Ingresa el email"
+                                        class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="celular" class=" form-control-label">Celular</label>
+                                <input type="text" name="celular" id="celular" placeholder="Ingrese el celular"
+                                    class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="shortel-code" class=" form-control-label">Ext Shortel</label>
+                                    <input type="text" name="shortel" id="shortel" placeholder="Ingresa la ext shortel"
+                                        class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="postal-code" class=" form-control-label">Comodato</label>
+                            <input type="text" name="comodato" id="comodato" placeholder="Ingresa el link del comodato"
+                                class="form-control">
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="select" class=" form-control-label">Selecciona una sede</label>
+                                <select name="sede" id="sede" class="form-control">
+                                    {{#each sedes.sedes}}
+                                    <option value="{{id}}">{{Nombre}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label for="equipo" class=" form-control-label">Seleccione un equipo</label>
+                                <select name="equipo" id="equipo" class="form-control">
+                                    {{#each equipos.equipos}}
+                                    <option value="{{id}}">{{equipo}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="select" class=" form-control-label">Seleccione un puesto</label>
+                                <select name="puesto" id="puesto" class="form-control">
+                                    {{#each puestos.puestos}}
+                                    <option value="{{id}}">{{puesto}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                        <hr>
+                        <button id="save-button" type="submit" class="btn btn-success btn-lg  btn-block">
+                            <i class="fa fa-save fa-lg"></i>&nbsp;
+                            <span id="payment-button-amount">Guardar</span>
+                            <span id="payment-button-sending" style="display:none;">Sending…</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="col-md-12">
+            <div class="copyright">
+                <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a
+                        href="https://colorlib.com">Colorlib</a>.
+                </p>
+            </div>
+        </div>
+</div> <!-- Se cierra el  Page Container Del Menu->

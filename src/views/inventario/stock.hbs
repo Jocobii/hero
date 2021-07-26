@@ -1,0 +1,251 @@
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 au-card">
+                    <!-- DATA TABLE -->
+                    <h3 class="title-5 m-b-35">STOCK</h3>
+                    <div class="table-data__tool">
+
+                        <div class="table-data__tool-right">
+                            <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal"
+                                data-target="#scrollmodal">
+                                <i class="zmdi zmdi-plus"></i>Agregar</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="tableStock" style="width:100%" class="table-earning">
+                            <thead>
+                                <tr>
+                                    <th style="display: none;">
+                                        <label class="au-checkbox">
+                                            <input type="checkbox">
+                                            <span class="au-checkmark"></span>
+                                        </label>
+                                    </th>
+                                    <th>FOLIO</th>
+                                    <th>MARCA</th>
+                                    <th>MODELO</th>
+                                    <th>TIPO</th>
+                                    <th>SERIE</th>
+                                    <th>SEDE</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each stock.stock}}
+                                <tr class="tr-shadow">
+                                    <td style="display: none;">
+                                        <label class="au-checkbox">
+                                            <input type="checkbox">
+                                            <span class="au-checkmark"></span>
+                                        </label>
+                                    </td>
+                                    <td>{{id}}</td>
+                                    <td>
+                                        {{dispositivo.modelodespositivo.marca.Nombre}}
+                                    </td>
+                                    <td class="desc">{{dispositivo.modelodespositivo.modelo}}</td>
+                                    <td>{{dispositivo.tipodispositivo.dispositivo}}</td>
+                                    <td>
+                                        <span class="status--process">{{dispositivo.serie}}</span>
+                                    </td>
+                                    <td>{{sede.Nombre}}</td>
+                                    <td>
+                                        <div class="table-data-feature">
+                                            <form action="/inventario/stock/asignar/{{id}}">
+                                                <button class="item" data-toggle="tooltip" data-placement="top"
+                                                    title="Send">
+                                                    <i class="zmdi zmdi-mail-send"></i>
+                                                </button>
+                                            </form>
+                                            <form action="/inventario/stock/asignar/{{id}}">
+                                                <button type="submit" class="item" data-toggle="tooltip"
+                                                    data-placement="top" title="Edit">
+                                                    <i class="zmdi zmdi-edit"></i>
+
+                                                </button>
+                                            </form>
+                                            <button class="item" data-toggle="tooltip" data-placement="top"
+                                                title="Delete">
+                                                <i class="zmdi zmdi-delete"></i>
+                                            </button>
+                                            <button class="item" data-toggle="tooltip" data-placement="top"
+                                                title="More">
+                                                <i class="zmdi zmdi-more"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- END DATA TABLE -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal scroll -->
+<div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>G-Global</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Agregar</strong>
+                        <small> Dispositivo</small>
+                    </div>
+                    <form action="/inventario/stock/guardardispositivo" class="card-body card-block" method="post">
+                        <div class="form-group">
+                            <label for="descripciont" class="control-label mb-1">Descripcion</label>
+                            <input id="descripcion" name="descripcion" type="text" class="form-control"
+                                aria-required="true" aria-invalid="false">
+                        </div>
+                        <div class="form-group has-success">
+                            <label for="serie" class="control-label mb-1">Serie</label>
+                            <input id="serie" name="serie" type="text" class="form-control valid" required>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="procesador" class="control-label mb-1">Procesador</label>
+                                    <input id="procesador" name="procesador" type="text" class="form-control">
+
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="memoria" class="control-label mb-1">Memoria</label>
+                                <div class="input-group">
+                                    <input id="memoria" name="memoria" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="almacenamiento" class="control-label mb-1">Almacenamiento</label>
+                                    <input id="almacenamiento" name="almacenamiento" type="text" class="form-control">
+
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="resolucion" class="control-label mb-1">Resolucion</label>
+                                <div class="input-group">
+                                    <input id="resolucion" name="resolucion" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="puertos" class="control-label mb-1">Puertos Video</label>
+                                    <input id="puertos" name="puertos" type="text" class="form-control">
+
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                <label for="select" class=" form-control-label">Seleccione un Tipo</label>
+                                <select name="tipo" id="tipo" class="form-control">
+                                    {{#each tipoDispositivo.tiposDispositivo}}
+                                    <option value="{{id}}">{{dispositivo}}</option>
+                                    {{/each}}
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            
+                            <div class="col-6">
+                                <div class="form-group">
+                                <label for="select" class=" form-control-label">Seleccione un Modelo</label>
+                                <select name="modelo" id="modelo" class="form-control">
+                                    {{#each modelos.Modelos}}
+                                    <option value="{{id}}">{{modelo}}</option>
+                                    {{/each}}
+                                </select>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="estado" class="control-label mb-1">Estado</label>
+                                <select name="estado" id="estado" class="form-control">
+                                    <option value="Nuevo">Nuevo</option>
+                                    <option value="Usado">Usado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                                <label for="usuariog" class="control-label mb-1">Usuario Gestion</label>
+                                <select name="usuariog" id="usuariog" class="form-control">
+                                    <option value="1">1</option>
+                                    
+                                </select>
+                            </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="codservicio" class="control-label mb-1">Codigo de Servicio</label>
+                                    <input id="codservicio" name="codservicio" type="text" class="form-control">
+
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="precio" class="control-label mb-1">Precio</label>
+                                <div class="input-group">
+                                    <input id="precio" name="precio" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                               <label for="estador" class="control-label mb-1">Estado Recurso</label>
+                                <select name="estador" id="estador" class="form-control">
+                                    <option value="1">Activo</option>
+                                    <option value="0">Inactivo</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label for="sede" class=" form-control-label">Seleccione una sede</label>
+                                <select name="sede" id="sede" class="form-control">
+                                    {{#each sede.sedes}}
+                                    <option value="{{id}}">{{Nombre}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            <button id="stockBtn" type="submit" class="btn btn-lg btn-success btn-block">
+                                <span>Guardar</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+        <div class="col-md-12">
+            <div class="copyright">
+                <p>Copyright © 2021 Hero. All rights reserved. by   <a
+                        href="https://g-global.com/">  G-Global</a>.
+                </p>
+            </div>
+        </div>
+   
+</div> <!-- Se cierra el  Page Container Del Menu->

@@ -1,0 +1,45 @@
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <form action="/marca/actualizarmarca" class="au-card" method="POST">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h3 class="text-center title-2">Marca</h3>
+                    </div>
+                    <hr>
+                    {{#each marca}}
+                    <div class="form-group" style="display: none;">
+                        <label for="nombremarca" class="control-label mb-1">Folio De La Marca</label>
+                        <input id="id" name="id" type="text" class="form-control" aria-required="true"
+                            aria-invalid="false" value="{{id}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombremarca" class="control-label mb-1">Nombre De La Marca</label>
+                        <input id="nombremarca" name="nombremarca" type="text" class="form-control" aria-required="true"
+                            aria-invalid="false" value="{{Nombre}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="select" class=" form-control-label">Selecciona un estado</label>
+                        <select name="estatus" id="estatus" class="form-control">
+                            <option value="1">Activa</option>
+                            <option value="0">Inactiva</option>
+                        </select>
+                    </div>
+                    {{/each}}
+                    <div class="m-2 row justify-content-center">
+                        <a href="/marca/" class="btn btn-danger col-auto btn-lg m-1">Cancelar</a>
+                        <button type="submit" class="btn btn-success col-auto btn-lg m-1">Actualizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-12">
+            <div class="copyright">
+                <p>Copyright © 2021 G-Global. All rights reserved.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div> <!-- Se cierra el  Page Container Del Menu->
